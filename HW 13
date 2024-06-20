@@ -1,0 +1,120 @@
+#1
+#def is_valid_position(position):
+#    
+#    return len(position) == 2 and 'a' <= position[0] <= 'h' and '1' <= position[1] <= '8'
+#
+#def chess_position_to_coordinates(position):
+#    
+#    column, row = position
+#    return ord(column) - ord('a') + 1, int(row)
+#
+#def can_queen_move(start, end):
+#    
+#    start_col, start_row = chess_position_to_coordinates(start)
+#    end_col, end_row = chess_position_to_coordinates(end)
+#
+#    
+#    return (start_col == end_col or start_row == end_row or
+#            abs(start_col - end_col) == abs(start_row - end_row))
+#
+#def can_knight_move(start, end):
+#    
+#    start_col, start_row = chess_position_to_coordinates(start)
+#    end_col, end_row = chess_position_to_coordinates(end)
+#
+#    
+#    return (abs(start_col - end_col) == 2 and abs(start_row - end_row) == 1 or
+#            abs(start_col - end_col) == 1 and abs(start_row - end_row) == 2)
+#
+#def main():
+#    while True:
+#        print("Выберите фигуру для проверки хода:")
+#        print("1. Ферзь")
+#        print("2. Конь")
+#        print("3. Выход")
+#
+#        choice = input("Введите номер (1-3): ")
+#
+#        if choice == '3':
+#            print("Выход из программы.")
+#            break
+#
+#        if choice not in ['1', '2']:
+#            print("Неверный выбор. Пожалуйста, выберите 1, 2 или 3.")
+#            continue
+#
+#        start = input("Введите начальную позицию (например, e2): ").lower()
+#        end = input("Введите конечную позицию (например, e4): ").lower()
+#
+#        if not is_valid_position(start) or not is_valid_position(end):
+#            print("Одна или обе позиции некорректны. Попробуйте снова.")
+#            continue
+#
+#        if start == end:
+#            print("Начальная и конечная позиции не должны совпадать. Попробуйте снова.")
+#            continue
+#
+#        if choice == '1':
+#            if can_queen_move(start, end):
+#                print(f"Ферзь может перейти с {start} на {end} за один ход.")
+#            else:
+#                print(f"Ферзь не может перейти с {start} на {end} за один ход.")
+#        elif choice == '2':
+#            if can_knight_move(start, end):
+#                print(f"Конь может перейти с {start} на {end} за один ход.")
+#            else:
+#                print(f"Конь не может перейти с {start} на {end} за один ход.")
+#
+#
+#main()
+
+
+
+
+
+
+
+#2
+#def plus_two(number):
+#    try:
+#        result = number + 2
+#        print(f"Результат: {result}")
+#    except TypeError:
+#        print("Ожидаемый тип данных — число!")
+#
+#
+#plus_two(5)          
+#plus_two("текст")    
+#plus_two(3.14)       
+#plus_two([1, 2, 3])
+
+
+
+#3
+def access_array_element(array, index):
+    try:
+        element = array[index]
+        print(f"Элемент по индексу {index}: {element}")
+    except IndexError:
+        print(f"Индекс {index} выходит за границы массива!")
+
+
+array = [10, 20, 30, 40, 50]
+
+print("Тест 1: Доступ к элементу по корректному индексу")
+access_array_element(array, 2)  
+
+print("\nТест 2: Доступ к элементу по некорректному индексу")
+access_array_element(array, 10)
+
+
+
+
+
+
+
+
+
+
+
+
